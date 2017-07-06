@@ -10,6 +10,7 @@ import metadoc.schema.Index
 import monaco.Uri
 import monaco.editor.IEditor
 import monaco.editor.IEditorConstructionOptions
+import monaco.editor.IEditorOptions
 import monaco.editor.IEditorOverrideServices
 import monaco.editor.IModelChangedEvent
 import monaco.languages.ILanguageExtensionPoint
@@ -87,6 +88,25 @@ object MetadocApp extends js.JSApp {
       }
 
       dom.window.addEventListener("resize", (_: dom.Event) => editor.layout())
+
+      def updateEditorTheme(theme: String) = {
+        val options = jsObject[IEditorOptions]
+        options.theme = theme
+        editor.updateOptions(options)
+      }
+
+      val themeControl = dom.document.getElementById("editor-theme").asInstanceOf[dom.html.Input]
+      themeControl.onclick = { (e: dom.MouseEvent) =>
+        val theme = if (themeControl.checked) "vs-dark" else "vs"
+        updateEditorTheme(theme)
+        dom.ext.LocalStorage.update("editor-theme", theme)
+      }
+
+      dom.ext.LocalStorage("editor-theme").foreach { theme =>
+        updateEditorTheme(theme)
+        if (theme == "vs-dark")
+          themeControl.checked = true
+      }
     }
   }
 

@@ -91,6 +91,8 @@ lazy val js = project
       "file-loader" -> "0.11.2",
       "html-webpack-plugin" -> "2.28.0",
       "image-webpack-loader" -> "3.3.1",
+      "material-design-icons" -> "3.0.1",
+      "material-components-web" -> "0.14.0",
       "node-sass" -> "4.5.3",
       "sass-loader" -> "6.0.6",
       "style-loader" -> "0.18.2",

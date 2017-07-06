@@ -6,11 +6,40 @@
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     <script src="vs/loader.js"></script>
   </head>
-  <body>
-    <header>
-      <div id="title">Metadoc</div>
+  <body class="mdc-typography">
+    <header class="mdc-toolbar mdc-toolbar--fixed">
+      <div class="mdc-toolbar__row">
+        <section class="mdc-toolbar__section mdc-toolbar__section--align-start">
+          <button class="metadoc-menu mxaterial-icons mdc-toolbar__icon--menu"><span class="logo">menu</span></button>
+          <span class="mdc-toolbar__title" id="title">Metadoc</span>
+        </section>
+      </div>
     </header>
-    <main>
+    <aside class="mdc-temporary-drawer" data-mdc-auto-init="MDCTemporaryDrawer">
+      <nav class="mdc-temporary-drawer__drawer">
+        <header class="mdc-temporary-drawer__header metadoc-drawer-header">
+          <div class="mdc-temporary-drawer__header-content mdc-theme--primary-bg mdc-theme--text-primary-on-primary">
+            Metadoc
+          </div>
+        </header>
+        <nav class="mdc-temporary-drawer__content mdc-list-group">
+          <h3 class="mdc-list-group__subheader">Options</h3>
+          <div class="mdc-list">
+            <a class="mdc-list-item mdc-temporary-drawer--selected" href="#" data-mdc-tabindex-handled="true" tabindex="-1">
+              <i class="material-icons mdc-list-item__start-detail" aria-hidden="true">invert_colors</i>
+              <div class="mdc-switch">
+                <input type="checkbox" id="editor-theme" class="mdc-switch__native-control">
+                <div class="mdc-switch__background">
+                  <div class="mdc-switch__knob"></div>
+                </div>
+              </div>
+              <label for="basic-switch" class="mdc-switch-label">&nbsp;Editor theme</label>
+            </a>
+          </div>
+        </nav>
+      </nav>
+    </aside>
+    <main class="mdc-toolbar-fixed-adjust">
       <div id="editor">Loading ..</div>
     </main>
   </body>
