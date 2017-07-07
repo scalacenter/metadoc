@@ -22,6 +22,7 @@ class MetadocEditorService extends IEditorService {
     val app = dom.document.getElementById("editor")
     val options = jsObject[IEditorConstructionOptions]
     options.readOnly = true
+    options.scrollBeyondLastLine = false
 
     val overrides = jsObject[IEditorOverrideServices]
     overrides.textModelResolverService = MetadocTextModelService

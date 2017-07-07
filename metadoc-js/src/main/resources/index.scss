@@ -12,6 +12,8 @@
   font-style: normal;
 }
 
+$header-height: 56px;
+
 body {
   margin: 0;
   width: 100%;
@@ -32,8 +34,9 @@ body {
 }
 
 .mdc-temporary-drawer__header-content {
-  background-image: url('images/favicon.png');
+  background-image: url('images/scalameta-logo.png');
   background-repeat: no-repeat;
+  background-position: center;
   background-size: contain;
 }
 
@@ -46,11 +49,11 @@ body {
 }
 
 .mdc-toolbar__row {
-  min-height: 56px;
+  min-height: $header-height;
 }
 
 .mdc-toolbar-fixed-adjust {
-  margin-top: 56px;
+  margin-top: $header-height;
 }
 
 #title {
@@ -58,12 +61,12 @@ body {
   direction: rtl;
   text-overflow: ellipsis;
   margin-right: 16px;
+  font-size: 16px;
   overflow: hidden;
   white-space: nowrap;
 }
 
 #editor {
-  height: 100vh;
+  height: calc(100vh - 56px);
   margin: 0;
-  overflow: hidden;
 }
