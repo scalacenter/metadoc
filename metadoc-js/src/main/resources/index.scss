@@ -22,7 +22,6 @@ body {
 
 .metadoc-menu {
   line-height: 24px;
-  padding-right: 0;
 
   .logo {
     color: transparent;
@@ -32,7 +31,7 @@ body {
   }
 }
 
-.metadoc-drawer-header .mdc-temporary-drawer__header-content {
+.mdc-temporary-drawer__header-content {
   background-image: url('images/favicon.png');
   background-repeat: no-repeat;
   background-size: contain;
@@ -42,9 +41,25 @@ body {
   padding: 8px 16px 0;
 }
 
+.mdc-toolbar__row {
+  min-height: 56px;
+}
+
+.mdc-toolbar-fixed-adjust {
+  margin-top: 56px;
+}
+
+#title {
+  margin-left: 0;
+  direction: rtl;
+  text-overflow: ellipsis;
+  margin-right: 16px;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
 #editor {
-  min-height: 100vh;
+  height: 100vh;
   margin: 0;
-	padding: 0;
-	overflow: hidden;
+  overflow: hidden;
 }
