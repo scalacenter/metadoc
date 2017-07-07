@@ -20,6 +20,13 @@ import org.scalajs.dom.Event
 
 object MetadocApp extends js.JSApp {
   def main(): Unit = {
+    val drawerElement = dom.document.querySelector(".mdc-temporary-drawer")
+    val drawer = new mdc.MDCTemporaryDrawer(drawerElement)
+    val menuElement = dom.document.querySelector(".metadoc-menu")
+    menuElement.addEventListener("click", { (_: dom.Event) =>
+      drawer.open = true
+    })
+
     for {
       _ <- loadMonaco()
       indexBytes <- fetchBytes("metadoc.index")
