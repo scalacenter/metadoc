@@ -41,6 +41,10 @@ body {
   padding: 8px 16px 0;
 }
 
+.mdc-linear-progress--closed {
+  display: none;
+}
+
 .mdc-toolbar__row {
   min-height: 56px;
 }

@@ -20,6 +20,10 @@ import org.scalajs.dom.Event
 
 object MetadocApp extends js.JSApp {
   def main(): Unit = {
+    val progressElement = dom.document.querySelector(".mdc-linear-progress")
+    val progress = mdc.MDCLinearProgress.attachTo(progressElement)
+    progress.determinate = false
+
     val drawerElement = dom.document.querySelector(".mdc-temporary-drawer")
     val drawer = new mdc.MDCTemporaryDrawer(drawerElement)
     val menuElement = dom.document.querySelector(".metadoc-menu")
@@ -34,6 +38,7 @@ object MetadocApp extends js.JSApp {
       val index = Index.parseFrom(indexBytes)
 
       registerLanguageExtensions(index)
+      progress.close()
 
       val editorService = new MetadocEditorService()
       val input = parseResourceInput(

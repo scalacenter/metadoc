@@ -20,7 +20,6 @@ import org.scalajs.dom
 class MetadocEditorService extends IEditorService {
   private lazy val editor: IStandaloneCodeEditor = {
     val app = dom.document.getElementById("editor")
-    app.innerHTML = ""
     val options = jsObject[IEditorConstructionOptions]
     options.readOnly = true
 
