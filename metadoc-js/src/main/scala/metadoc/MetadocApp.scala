@@ -95,7 +95,9 @@ object MetadocApp extends js.JSApp {
         editor.updateOptions(options)
       }
 
-      val themeControl = dom.document.getElementById("editor-theme").asInstanceOf[dom.html.Input]
+      val themeControl = dom.document
+        .getElementById("editor-theme")
+        .asInstanceOf[dom.html.Input]
       themeControl.onclick = { (e: dom.MouseEvent) =>
         val theme = if (themeControl.checked) "vs-dark" else "vs"
         updateEditorTheme(theme)
